@@ -3,7 +3,7 @@
 # Paul Rabie adapted this code to accomodate quantitative data, and Matt Barbour debugged Paul's code to make it work.
 
 # Treatment of beta_WN, beta_ST and contrib is the same as in betalink.b  See notes associated with that function.  
-betalink.quantitative = function(w1,w2,bf="jaccard"){
+betalink.q = function(w1,w2,bf="jaccard"){
   sp1 = list(top=rowSums(w1),bottom=colSums(w1),all=c(rowSums(w1),colSums(w1)[!names(colSums(w1))%in%names(rowSums(w1))]))
   sp2 = list(top=rowSums(w2),bottom=colSums(w2),all=c(rowSums(w2),colSums(w2)[!names(colSums(w2))%in%names(rowSums(w2))]))
   topCom=vec2data.frame(sp1$top,sp2$top,all=T)
